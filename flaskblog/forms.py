@@ -69,7 +69,7 @@ class ChordForm(FlaskForm):
     chord_3 = StringField('Chord 3', validators = [DataRequired()])
     chord_4 = StringField('Chord 4', validators = [DataRequired()])
 
-    num_bars = IntegerField('Number Of Bars', validators=[DataRequired()])
-    temperature = FloatField('Temperature', validators=[DataRequired()])
+    num_bars = IntegerRangeField('Number Of Bars', validators=[DataRequired()])
+    temperature = DecimalRangeField('Temperature', validators=[DataRequired()])
     
     submit = SubmitField('Submit')
