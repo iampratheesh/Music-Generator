@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <script>
+            function outputBars(num_bars) {
+                document.querySelector('#selected-num-bars').value = num_bars;
+            }
+        </script>
+        <script>
+            function outputTemp(temperature) {
+                document.querySelector('#selected-temp').value = temperature;
+            }
+        </script>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Enter Inputs</legend>
+                <div class="form-group">
+                    {{ form.num_bars.label(class="form-control-label") }}
+                    {% if form.num_bars.errors %}
+                        {{ form.num_bars(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.num_bars.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.num_bars(class="form-control form-control-lg", min=4, max=64, oninput="outputBars(value)") }}
+                        <output for="num_bars" id="selected-num-bars">{{ form.num_bars.data }}</output>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.temperature.label(class="form-control-label") }}
+                    {% if form.temperature.errors %}
+                        {{ form.temperature(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.temperature.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.temperature(class="form-control form-control-lg", min=0.02, max=1.5, oninput="outputTemp(value)") }}
+                        <output for="num_bars" id="selected-temp">{{ form.temperature.data }}</output>
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+    </div>
+{% endblock content %}

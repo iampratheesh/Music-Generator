@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Here is your generated music</h1>
+    <audio controls>
+    	<source src="{{ music_file }}" type="audio/mpeg">
+    	Your browser does not support the audio element.
+    </audio>
+{% endblock content %}

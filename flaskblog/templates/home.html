@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+      <h1>Polyphonic Music Generation</h1>
+      <h3>Here are some of our cherrypicked music collection.</h3>
+      <audio controls>
+        <source src="{{ url_for('static', filename = 'cherrypicked_music/9065eb6738644753.mp3') }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <audio controls>
+        <source src="{{ url_for('static', filename = 'cherrypicked_music/942ae05571838072.mp3') }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <audio controls>
+        <source src="{{ url_for('static', filename = 'cherrypicked_music/88e6bd732c106fd4.mp3') }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <audio controls>
+        <source src="{{ url_for('static', filename = 'cherrypicked_music/3eca7f25e8a908d0.mp3') }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <audio controls>
+        <source src="{{ url_for('static', filename = 'cherrypicked_music/ebe2700a8386b120.mp3') }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <audio controls>
+        <source src="{{ url_for('static', filename = 'cherrypicked_music/0aeeb13cd079600c.mp3') }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+{% endblock content %}
