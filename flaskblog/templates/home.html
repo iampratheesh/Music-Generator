@@ -20,7 +20,7 @@
       }
       .parallax {
         /* The image used */
-        background-image: url("{{ url_for('static', filename = 'images/parallax2.jpg') }}");
+        background-image: url("{{ url_for('static', filename = 'images/parallax.jpg') }}");
 
         /* Set a specific height */
         height: 500px;
@@ -37,7 +37,7 @@
       <!-- Container element -->
       <div class="parallax">
         <div class="caption">
-          <span class="border">POLYPHONIC MUSIC GENERATION</span>
+          <span class="border">POLYPHONIC MUSIC GENERATOR</span>
         </div>
       </div>
       <h3>Here are some of our cherrypicked music collection.</h3>
@@ -65,4 +65,5 @@
         <source src="{{ url_for('static', filename = 'cherrypicked_music/0aeeb13cd079600c.mp3') }}" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
+
 {% endblock content %}
