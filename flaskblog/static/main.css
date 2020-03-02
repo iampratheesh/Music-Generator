@@ -1,7 +1,9 @@
 body {
   background: #fafafa;
   color: #333333;
-  margin-top: 5rem;
+  margin-top: 55px;
+  height: auto;
+  width: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -9,7 +11,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-steel {
-  background-color: #5f788a;
+  background-color: #654321;
 }
 
 .site-header .navbar-nav .nav-link {

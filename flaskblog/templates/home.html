@@ -1,6 +1,45 @@
 {% extends "layout.html" %}
 {% block content %}
-      <h1>Polyphonic Music Generation</h1>
+      <style>
+        .caption {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        color: #000;
+      }
+
+      .caption span.border {
+        background-color: #111;
+        color: #fff;
+        padding: 18px;
+        font-size: 25px;
+        letter-spacing: 10px;
+        opacity: 0.65;
+      }
+      .parallax {
+        /* The image used */
+        background-image: url("{{ url_for('static', filename = 'images/parallax.jpg') }}");
+
+        /* Set a specific height */
+        height: 500px;
+
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      </style>
+
+      <!-- Container element -->
+      <div class="parallax">
+        <div class="caption">
+          <span class="border">POLYPHONIC MUSIC GENERATION</span>
+        </div>
+      </div>
       <h3>Here are some of our cherrypicked music collection.</h3>
       <audio controls>
         <source src="{{ url_for('static', filename = 'cherrypicked_music/9065eb6738644753.mp3') }}" type="audio/mpeg">
