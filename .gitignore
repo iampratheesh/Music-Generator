@@ -1,6 +1,5 @@
 *.pyc
 flaskblog/content/*
-flaskblog/static/cherrypicked_music/*
 flaskblog/static/music/*
 flaskblog/static/profile_pics/*
 screens
