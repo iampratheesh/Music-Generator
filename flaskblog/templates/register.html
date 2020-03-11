@@ -1,10 +1,10 @@
 {% extends "layout.html" %}
 {% block content %}
-    <div class="content-section">
+    <div class="content-section" style="background-color:#bad5b9;text-align:center;padding:50px 80px;text-align: justify;">
         <form method="POST" action="">
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Join Today</legend>
+                <legend class="border-bottom mb-4" style="text-align: center;">Join Today</legend>
                 <div class="form-group">
                     {{ form.username.label(class="form-control-label") }}
 
@@ -59,7 +59,7 @@
                     {% endif %}
                 </div>
             </fieldset>
-            <div class="form-group">
+            <div class="form-group" style="text-align: center;">
                 {{ form.submit(class="btn btn-outline-info") }}
             </div>
         </form>

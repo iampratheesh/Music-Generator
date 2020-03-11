@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-    <div class="content-section">
+    <div class="content-section" style="background-color:#bad5b9;text-align:center;padding:50px 80px;text-align: justify;">
         <script>
             function outputBars(num_bars) {
                 document.querySelector('#selected-num-bars').value = num_bars;
@@ -14,7 +14,7 @@
         <form method="POST" action="">
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Enter Inputs</legend>
+                <legend class="border-bottom mb-4" style="text-align: center;">Enter Inputs</legend>
                 <div class="form-group">
                     {{ form.chord_1.label(class="form-control-label") }}
                     {% if form.chord_1.errors %}
@@ -96,7 +96,7 @@
                     {% endif %}
                 </div>
             </fieldset>
-            <div class="form-group">
+            <div class="form-group" style="text-align: center;">
                 {{ form.submit(class="btn btn-outline-info") }}
             </div>
         </form>
