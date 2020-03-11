@@ -1,8 +1,111 @@
 {% extends "layout.html" %}
 {% block content %}
-      <h1>Polyphonic Music Generation</h1>
-      <h3>Here are some of our cherrypicked music collection.</h3>
-      <audio controls>
+      <style>
+        body, html {
+          height: 55px;
+          margin: 0;
+          font: 400 15px/1.8 "Lato", sans-serif;
+          color: #777;
+        }
+
+        .bgimg-1, .bgimg-2, .bgimg-3 {
+          position: relative;
+          opacity: 0.65;
+          background-attachment: fixed;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+
+        }
+        .bgimg-1 {
+          background-image: url("{{ url_for('static', filename = 'images/parallax.jpg') }}");
+          min-height: 400px;
+        }
+
+        .bgimg-2 {
+          background-image: url("{{ url_for('static', filename = 'images/parallax2.jpg') }}");
+          min-height: 400px;
+        }
+
+        .bgimg-3 {
+          background-image: url("{{ url_for('static', filename = 'images/parallax3.jpg') }}");
+          min-height: 400px;
+        }
+
+        .caption {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          width: 100%;
+          text-align: center;
+          color: #000;
+        }
+
+        .caption span.border {
+          background-color: #111;
+          color: #fff;
+          padding: 18px;
+          font-size: 25px;
+          letter-spacing: 10px;
+        }
+
+        h3 {
+          letter-spacing: 5px;
+          text-transform: uppercase;
+          font: 20px "Lato", sans-serif;
+          color: #111;
+        }
+
+        /* Turn off parallax scrolling for tablets and phones */
+        @media only screen and (max-device-width: 1024px) {
+          .bgimg-1, .bgimg-2, .bgimg-3 {
+            background-attachment: scroll;
+          }
+        }
+        </style>
+
+      <!-- Container element -->
+      <div class="bgimg-1">
+  <div class="caption">
+  <span class="border">POLYPHONIC MUSIC GENERATOR</span>
+  </div>
+</div>
+
+<div style="color: #777;background-color:#C8D5B9;text-align:center;padding:50px 80px;text-align: justify;">
+  <h3 style="text-align:center;">INTRODUCTION</h3>
+  <p>In today's world where digital content is growing exponentially, the demand for royalty free music has also increased. Recent advancements in deep neural networks have helped algorithms to generate music that is comparable to music composed by humans. Our goal with this project is to create royalty free music using Deep Learning for content creators and songwriters alike.</p>
+</div>
+
+<div class="bgimg-2">
+  <div class="caption">
+  <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">ROYALTY FREE MUSIC</span>
+  </div>
+</div>
+
+<div style="position:relative;">
+  <div style="color:#777;background-color:#C8D5B9;text-align:center;padding:50px 80px;text-align: justify;">
+  <p>Generate any kind of music you like using our web application. Any music generated will be royalty free and there won't be any copyright infringement. How cool is that!</p>
+  </div>
+</div>
+
+<div class="bgimg-3">
+  <div class="caption">
+  <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">TWO WAYS FOR GENERATING MUSIC</span>
+  </div>
+</div>
+
+<div style="position:relative;">
+  <div style="color:#777;background-color:#C8D5B9;text-align:center;padding:50px 80px;text-align: justify;">
+  <p>There are two ways for generating music. One is the easier way and one is for those people who like to get their hands dirty. Register now to get started!</p>
+  </div>
+</div>
+
+<div class="bgimg-1">
+  <div class="caption">
+    <span class="border">Our Cherrypicked Music Collection</span>
+  </div>
+  <div style="color: #C8D5B9;background-color:white;text-align:center;padding:50px 80px;">
+  <audio controls>
         <source src="{{ url_for('static', filename = 'cherrypicked_music/9065eb6738644753.mp3') }}" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
@@ -26,4 +129,6 @@
         <source src="{{ url_for('static', filename = 'cherrypicked_music/0aeeb13cd079600c.mp3') }}" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
+    </div>
+</div>
 {% endblock content %}

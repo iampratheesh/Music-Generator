@@ -49,10 +49,6 @@ def slerp(p0, p1, t):
   so = np.sin(omega)
   return np.sin((1.0-t)*omega) / so * p0 + np.sin(t*omega)/so * p1
 
-# Download sequence.
-def download(note_sequence, filename):
-  mm.sequence_proto_to_midi_file(note_sequence, filename)
-  files.download(filename)
 
 # Chord encoding tensor.
 def chord_encoding(chord):
