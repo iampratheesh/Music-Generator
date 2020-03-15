@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from flask_login import current_user
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField, IntegerField, FloatField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField, IntegerField, FloatField, SelectField
 from wtforms.fields.html5 import IntegerRangeField, DecimalRangeField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from flaskblog.models import User
@@ -64,10 +64,10 @@ class LandingForm(FlaskForm):
     submit = SubmitField('Submit')
 
 class ChordForm(FlaskForm):
-    chord_1 = StringField('Chord 1', validators = [DataRequired()])
-    chord_2 = StringField('Chord 2', validators = [DataRequired()])
-    chord_3 = StringField('Chord 3', validators = [DataRequired()])
-    chord_4 = StringField('Chord 4', validators = [DataRequired()])
+    chord_1 = SelectField('Chord 1', validators = [DataRequired()], choices = [('Dm','Dm'), ('F','F'), ('Am','Am'), ('G','G')])
+    chord_2 = SelectField('Chord 2', validators = [DataRequired()], choices = [])
+    chord_3 = SelectField('Chord 3', validators = [DataRequired()], choices = [])
+    chord_4 = SelectField('Chord 4', validators = [DataRequired()], choices = [])
 
     num_bars = IntegerRangeField('Number Of Bars', validators=[DataRequired()])
     temperature = DecimalRangeField('Temperature', validators=[DataRequired()])

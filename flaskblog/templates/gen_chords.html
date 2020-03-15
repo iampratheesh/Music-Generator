@@ -5,10 +5,9 @@
             function outputBars(num_bars) {
                 document.querySelector('#selected-num-bars').value = num_bars;
             }
-        </script>
-        <script>
             function outputTemp(temperature) {
-                document.querySelector('#selected-temp').value = temperature;
+                val = Math.round(temperature*100)/100
+                document.querySelector('#selected-temp').value = val;
             }
         </script>
         <form method="POST" action="">
@@ -101,4 +100,15 @@
             </div>
         </form>
     </div>
+
+<script>
+    let chord_1 = document.getElementById('chord_1');
+    let chord_2 = document.getElementById('chord_2');
+
+    chord_1.onchange = function() {
+        chord = chord_1.value;
+        alert(chord);
+    }
+</script>
+
 {% endblock content %}

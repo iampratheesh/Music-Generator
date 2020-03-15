@@ -223,6 +223,10 @@ def landing():
 @login_required
 def gen_chords():
     form = ChordForm()
+    print("Chords CHOICES from form:" + str(form.chord_1.choices))
+    form.chord_2.choices = [(chord_id, chord_name) for chord_id, chord_name in form.chord_1.choices]
+    form.chord_3.choices = [(chord_id, chord_name) for chord_id, chord_name in form.chord_1.choices]
+    form.chord_4.choices = [(chord_id, chord_name) for chord_id, chord_name in form.chord_1.choices]
     if form.validate_on_submit():
         chord_1 = form.chord_1.data
         chord_2 = form.chord_2.data
